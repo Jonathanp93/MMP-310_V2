@@ -1,39 +1,20 @@
-var narration;
-var narration2;
+var scene = "caveEntrance"
 
-var bunny;
-var grayBunny;
 
-var cave3tunnels;
-var caveEntrance;
-var cave;
-
-var scene = "cave"
-var scene = "cave 3 tunnels"
-var scene = "cave outside"
+/*var bunnyImage
+var grayBunnyImage
+var cave3tunnelsImage
+var caveOutsideImage*/
 
 function preload() {
 
     bunny = loadImage('bunny.png');
     grayBunny = loadImage('grayBunny.png');
     cave3tunnels = loadImage('cave_3_tunnels.png');
-    caveEntrance = loadImage('cave_entrance.png');
+    caveOutside = loadImage('cave_entrance.png');
 
 }
 
-
-// character location.
-/*var bunnyX = 370;
-var bunnyY = 490;
-
-var grayBunnyX = 500;
-var grayBunnyY = 500;*/
-
-//setting
-
-
-narration = "Now we messed up, which way is it?";
-narration2 = "Right is always right!"
 
 
 function setup() {
@@ -43,85 +24,100 @@ function setup() {
 
 
 function mousePressed() {
-    if (scene == "cave") {
-        scene = "cave 3 tunnels";
-    } else if (scene == "cave 3 tunnels") {
-        scene = "cave outside";
-    } else if (scene == "cave outside") {
-        scene = "cave";
+    if (scene == "caveEntrance") {
+        scene == "cave";
+    } else if (scene == "cave") {
+        scene == "cave 3 tunnels";
+    } else if (scene == "cave3tunnels") {
+        scene == "caveEntrance";
     }
 }
 
+function cave() {
+    background("purple")
+    fill("black");
+    rect(0, 700, windowWidth, 700, 0, 700, windowWidth, 700);
+    image(bunny, 250, 500)
+    image(grayBunny, 350, 500)
+}
 
 
+function cave3tunnels() {
+    background("black")
+    image(cave3tunnels, 300, 0)
+    image(bunny, 420, 450)
+    image(grayBunny, 500, 450)
 
+}
+
+
+function caveEntrance() {
+    background("#5ce4ff")
+    image(caveOutside, 0, 100)
+    image(bunny, 300, 500)
+    image(grayBunny, 200, 500)
+    fill("green");
+    stroke("green");
+    rect(0, 700, windowWidth, 800, 0, 700, windowWidth, 800);
+}
+
+
+function narration(story) {
+    fill('white');
+    textSize(30);
+    textAlign(CENTER, CENTER);
+    text(story, width / 4, 20, width / 2);
+}
+
+
+function bunny(x, y) {
+    image(bunny, x, y);
+}
+
+
+function grayBunny(x, y) {
+    image(grayBunny, x, y);
+}
+
+var currentSetting = "cave";
 
 function draw() {
 
     background("purple");
 
-    // draw characters
-
-    /*
-        image(bunny,bunnyX,bunnyY);
-        image(grayBunny,grayBunnyX,grayBunnyY);*/
 
 
-    // narration
-    fill("white");
-    textSize(30);
-    textAlign(CENTER, CENTER);
-    text(narration, 300, 50, width / 2);
 
-    fill("white");
-    textSize(30);
-    textAlign(CENTER, CENTER);
-    text(narration2, 650, 400);
+    if (currentSetting == "caveEntrance") {
 
-    if (scene == "cave") {
-        background("purple");
-        fill("black")
-        rect(0, 700, windowWidth, 700, 0, 700, windowWidth, 700);
+        caveEntrance();
+        image(bunny, 300, 500)
+        image(grayBunny, 200, 500)
+        narration("Once upon a time, there were two bunnies searching for adventure.");
+
+
+    } else if (currentSetting == "cave") {
+
+        cave();
         image(bunny, 250, 500)
         image(grayBunny, 350, 500)
+        narration("The two bunny's had gotten lost searching for treasure.");
 
+    } else if (currentSetting == "cave3tunnels") {
 
-        fill("white");
-        textSize(30);
-        text("told you we should've left earlier!", 350, 250);
-
-
-
-    } else if (scene == "cave 3 tunnels") {
-        background("black");
+        cave3tunnels();
         image(cave3tunnels, 300, 0)
         image(bunny, 420, 450)
         image(grayBunny, 500, 450)
+        narration("Which way do we go!");
 
+    } else if (currentSetting == "caveEntrance") {
 
-        fill("white");
-        textSize(30);
-        text("'3 tunnels, which way is it?'", 600, 300);
-
-
-
-
-    } else if (scene == "cave outside") {
-        background("#5ce4ff");
-        image(caveEntrance, 0, 100)
-        image(bunny, 300, 500)
-        image(grayBunny, 200, 500)
-        fill("green");
-        stroke("green");
-        rect(0, 700, windowWidth, 800, 0, 700, windowWidth, 800);
-
-
-
-
-        fill("black");
-        textSize(30);
-        text("'finally we're out of there!'", 750, 500);
-
+        caveEntrance();
+        image(bunny, 400, 500)
+        image(grayBunny, 300, 500)
+        narration("Next time we're coming with a map!");
     }
+
 
 }
