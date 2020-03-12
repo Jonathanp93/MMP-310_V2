@@ -1,4 +1,4 @@
-var scene = "caveEntrance"
+var scene = "caveEntrance";
 
 
 /*var bunnyImage
@@ -25,11 +25,11 @@ function setup() {
 
 function mousePressed() {
     if (scene == "caveEntrance") {
-        scene == "cave";
+        scene = "cave";
     } else if (scene == "cave") {
-        scene == "cave 3 tunnels";
+        scene = "cave3tunnels";
     } else if (scene == "cave3tunnels") {
-        scene == "caveEntrance";
+        scene = "caveEntrance";
     }
 }
 
@@ -64,6 +64,7 @@ function caveEntrance() {
 
 function narration(story) {
     fill('white');
+    stroke('white');
     textSize(30);
     textAlign(CENTER, CENTER);
     text(story, width / 4, 20, width / 2);
@@ -79,7 +80,7 @@ function grayBunny(x, y) {
     image(grayBunny, x, y);
 }
 
-var currentSetting = "cave";
+var currentSetting = "caveEntrance"
 
 function draw() {
 
