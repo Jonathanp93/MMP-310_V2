@@ -1,10 +1,12 @@
-/*var scene = "caveEntrance";*/
+var scene = "caveEntrance";
 
+/*
 
-/*var bunnyImage
+var bunnyImage
 var grayBunnyImage
 var cave3tunnelsImage
-var caveOutsideImage*/
+var caveOutsideImage
+*/
 
 function preload() {
 
@@ -35,10 +37,11 @@ function mousePressed() {
 
 function cave() {
     background("purple")
-    fill("black");
-    rect(0, 700, windowWidth, 700, 0, 700, windowWidth, 700);
     image(bunny, 250, 500)
     image(grayBunny, 350, 500)
+    fill("black");
+    rect(0, 700, windowWidth, 700, 0, 700, windowWidth, 700);
+
 }
 
 
@@ -80,52 +83,61 @@ function grayBunny(x, y) {
     image(grayBunny, x, y);
 }
 
-var currentSetting = "caveEntrance"
 
 function draw() {
 
     background("purple");
 
-
-function mousePressed() {
-    if (scene == "caveEntrance") {
-        scene = "cave";
-    } else if (scene == "cave") {
-        scene = "cave3tunnels";
-    } else if (scene == "cave3tunnels") {
-        scene = "caveEntrance";
-    }
-}
-
-    if (currentSetting == "caveEntrance") {
-
-        caveEntrance();
-        image(bunny, 300, 500)
-        image(grayBunny, 200, 500)
-        narration("Once upon a time, there were two bunnies searching for adventure.");
+    var scene = "caveEntrance";
 
 
-    } else if (currentSetting == "cave") {
 
-        cave();
-        image(bunny, 250, 500)
-        image(grayBunny, 350, 500)
-        narration("The two bunny's had gotten lost searching for treasure.");
+    function mousePressed() {
 
-    } else if (currentSetting == "cave3tunnels") {
 
-        cave3tunnels();
-        image(cave3tunnels, 300, 0)
-        image(bunny, 420, 450)
-        image(grayBunny, 500, 450)
-        narration("Which way do we go!");
 
-    } else if (currentSetting == "caveEntrance") {
+        if (scene == "caveEntrance") {
+            scene = "cave";
+        } else if (scene == "cave") {
+            scene = "cave3tunnels";
+        } else if (scene == "cave3tunnels") {
+            scene = "caveEntrance";
+        }
 
-        caveEntrance();
-        image(bunny, 400, 500)
-        image(grayBunny, 300, 500)
-        narration("Next time we're coming with a map!");
+
+        /*var currentSetting = "caveEntrance"*/
+        /*
+
+        if (currentSetting == "caveEntrance") {
+
+            caveEntrance();
+            image(bunny, 300, 500)
+            image(grayBunny, 200, 500)
+            narration("Once upon a time, there were two bunnies searching for adventure.");
+
+
+        } else if (currentSetting == "cave") {
+
+            cave();
+            image(bunny, 250, 500)
+            image(grayBunny, 350, 500)
+            narration("The two bunny's had gotten lost searching for treasure.");
+
+        } else if (currentSetting == "cave3tunnels") {
+
+            cave3tunnels();
+            image(cave3tunnels, 300, 0)
+            image(bunny, 420, 450)
+            image(grayBunny, 500, 450)
+            narration("Which way do we go!");
+
+        } else if (currentSetting == "caveEntrance") {
+
+            caveEntrance();
+            image(bunny, 400, 500)
+            image(grayBunny, 300, 500)
+            narration("Next time we're coming with a map!");
+       */
     }
 
 
