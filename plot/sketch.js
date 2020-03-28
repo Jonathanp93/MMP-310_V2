@@ -35,6 +35,7 @@ function mousePressed() {
 function cave() {
     background("purple")
     fill("black");
+    stroke("black");
     rect(0, 700, windowWidth, 700, 0, 700, windowWidth, 700);
     image(bunny, 250, 500)
     image(grayBunny, 350, 500)
@@ -106,7 +107,7 @@ function draw() {
         image(cave3Image, 300, 0)
         image(bunny, 420, 450)
         image(grayBunny, 500, 450)
-        narration("Which way do we go!");
+        narration("Which way do we go!One of these will lead us outside!");
 
     } else if (scene == "caveEntrance") {
 
