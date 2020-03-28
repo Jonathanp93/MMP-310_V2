@@ -1,16 +1,13 @@
 var scene = "caveEntrance";
 
 
-/*var bunnyImage
-var grayBunnyImage
-var cave3tunnelsImage
-var caveOutsideImage*/
+
 
 function preload() {
 
     bunny = loadImage('bunny.png');
     grayBunny = loadImage('grayBunny.png');
-    cave3tunnels = loadImage('cave_3_tunnels.png');
+    cave3Image = loadImage('cave_3_tunnels.png');
     caveOutside = loadImage('cave_entrance.png');
 
 }
@@ -46,7 +43,7 @@ function cave() {
 
 function cave3tunnels() {
     background("black")
-    image(cave3tunnels, 300, 0)
+    image(cave3Image, 300, 0)
     image(bunny, 420, 450)
     image(grayBunny, 500, 450)
 
@@ -106,7 +103,7 @@ function draw() {
     } else if (scene == "cave3tunnels") {
 
         cave3tunnels();
-        image(cave3tunnels, 300, 0)
+        image(cave3Image, 300, 0)
         image(bunny, 420, 450)
         image(grayBunny, 500, 450)
         narration("Which way do we go!");
