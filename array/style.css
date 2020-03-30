@@ -1,0 +1,19 @@
+body{
+	background: ("orange");
+	background: radial-gradient(circle, ("black")0%, ("tan")100%;
+
+	font-size: 20px;
+	font-family; verdana;
+	color: ("yellow");
+
+}
+
+a{
+	color: ("blue");
+
+}
+
+h1, a {
+	font-size:2em;
+
+}
