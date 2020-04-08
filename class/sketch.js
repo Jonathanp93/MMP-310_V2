@@ -59,7 +59,7 @@ function draw() {
 
     // beach color
     noStroke();
-    fill('sandybrown');
+    fill('green');
     rect(0, height / 2, width, height / 2);
 
     // ocean 
