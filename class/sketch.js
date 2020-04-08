@@ -18,7 +18,7 @@ var numTrees = 5;
 var trees = [];
 
 var numBoat = 5;
-var Boats = [];
+var boats = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -49,7 +49,7 @@ function setup() {
 
     // add boat positions 
     for (let i = 0; i < numBoat; i++) {
-        let boat = new boat(boatImage);
+        let boat = new Boat(boatImage);
         boats.push(boat);
     }
 }
