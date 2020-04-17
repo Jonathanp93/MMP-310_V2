@@ -1,0 +1,30 @@
+body{
+
+    margin: 0;
+    overflow: hidden;
+
+}
+
+button {
+    border: 5px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: mediumpurple;
+    color: yellow;
+    font-size: 10px;
+    cursor:pointer
+    
+}
+
+button:hover{
+    background-color:yellow;
+    color: mediumpurple;
+}
+
+button:active {
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+    color: yellow;
+    
+    
+}
