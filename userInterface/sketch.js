@@ -4,8 +4,8 @@ var colorSlider;
 var changeColor = r, g, b;
 
 var r = 0;
-var g = 128;
-var b = 255;
+var g = 55;
+var b = 215;
 
 
 
@@ -69,14 +69,14 @@ function saveImage() {
 
 
 function pattern() {
-    background("purple");
+    background("yellow");
 
     for (let i = 0; i < numCircles; i++) {
         let x = i * width / numCircles + random(50);
         let y = random(height);
         let s = random(100, 200);
 
-        fill(r);
+        fill(r, g, b);
         ellipse(x, y, s);
 
 
