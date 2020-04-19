@@ -1,13 +1,14 @@
 var numCircles = 10;
 var slider;
-
-var r = "red";
-var g = "green";
-var b = "blue";
-
-
+var colorSlider;
 var changeColor = r,
     g, b;
+
+var r = (255, 0, 0);
+var g = (0, 255, 64);
+var b = (0, 0, 255);
+
+
 
 
 
@@ -34,17 +35,18 @@ function setup() {
     var label = createElement("label", "update circle color:");
     label.position(250, 250);
 
-    slider = createSlider(5, 200, changeColor);
-    slider.position(250, 300);
-    slider.input(changeColor);
+    colorSlider = createSlider(5, 200, changeColor);
+    colorSlider.position(250, 300);
+    colorSlider.input(changeCircleColor);
 
 
 }
 
 
-function changeColor() {
+function changeCircleColor() {
 
     changeColor = this.value();
+    pattern();
 }
 
 
@@ -75,10 +77,10 @@ function pattern() {
         let y = random(height);
         let s = random(100, 200);
 
-        fill("r,g,b");
+        fill(r, g, b);
         ellipse(x, y, s);
+
+
     }
-
-
 
 }
