@@ -52,7 +52,7 @@ function setup() {
     var grassLabel = createElement("label", "Grass Y");
     grassLabel.position(50, 270);
 
-    grassSlider = createSlider(135,255, grassY);
+    grassSlider = createSlider(130,300, grassY);
     grassSlider.position(50, 300);
     grassSlider.input(updateGrass);
 
@@ -169,7 +169,7 @@ function draw() {
 
     // ocean 
     fill('darkblue');
-    rect(0, height * 2 / 3, width, height / 3);
+    rect(0, height *2 / 3, width, height / 3);
 
     // trees
     for (let i = 0; i < numTrees; i++) {
