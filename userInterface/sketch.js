@@ -149,18 +149,18 @@ function pattern() {
 
     // trees
     for (let i = 0; i < numTrees; i++) {
-        trees[i].pattern();
+        trees[i].draw();
     }
 
     // boats
     for (let i = 0; i < numBoat; i++) {
-        boats[i].pattern();
+        boats[i].draw();
         boats[i].update();
     }
 
     // draw clouds
     for (let i = 0; i < numClouds; i++) {
-        clouds[i].pattern();
+        clouds[i].draw();
         clouds[i].update();
     }
 
