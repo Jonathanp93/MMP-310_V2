@@ -69,7 +69,7 @@ function setup() {
     for (let i = 0; i < numClouds; i++) {
         let y = random(height / 3);
 
-        let cloud = new cloud(x, y, cloudImage);
+        let cloud = new Cloud(x, y, cloudImage);
         clouds.push(cloud);
 
         // update x, distributing number of clouds across canvas
@@ -136,23 +136,8 @@ function saveImage() {
 
 
 function pattern() {
-    colorMode(RGB, 53, 87, 100);
-    background(backColor);
-
-    for (let i = 0; i < numCircles; i++) {
-        let x = i * width / numCircles + random(50);
-        let y = random(height);
-        let s = random(100, 200);
-
-        fill(r, g, b);
-        ellipse(x, y, s);
-
-
-    }
-    
-    function draw() {
-    
-
+    colorMode(HSB, 360, 100, 100);
+    background(backColor, 87, 100);
     // beach color
     noStroke();
     fill('green');
@@ -164,21 +149,20 @@ function pattern() {
 
     // trees
     for (let i = 0; i < numTrees; i++) {
-        trees[i].draw();
+        trees[i].pattern();
     }
 
     // boats
     for (let i = 0; i < numBoat; i++) {
-        boats[i].draw();
+        boats[i].pattern();
         boats[i].update();
     }
 
     // draw clouds
     for (let i = 0; i < numClouds; i++) {
-        clouds[i].draw();
+        clouds[i].pattern();
         clouds[i].update();
     }
 
-}
 
 }
