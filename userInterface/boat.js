@@ -6,12 +6,12 @@ class Boat extends Thing {
 
 		super(x, y, img);
 
-		this.xSpeed = random(1,3);
+		this.xSpeed = random(boatMinSpeed, boatMaxSpeed);
 		this.ySpeed = random(-2, 2);
 	}
 
 	update() {
-		this.x += this.xSpeed + random(1);
+		this.x += this.xSpeed + random(boatMinSpeed, boatMaxSpeed);
 		this.y += this.ySpeed + random(-0.5, 0.5);
 
 		// reset x position

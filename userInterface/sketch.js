@@ -1,15 +1,23 @@
 var numCircles = 10;
 var slider;
 var colorSlider;
-var changeColor = r,
+var changeSpeed = r,
     g, b;
 
 var r = 0;
 var g = 55;
 var b = 215;
 
-var backColor = 125;
+var backColor = 255;
 var hueSlider;
+
+var boatMinSpeed = -0.5;
+var boatMaxSpeed = 2;
+var boatSpeedSlider;
+
+
+var grassY;
+var grassSlider;
 
 var boatImage, cloudImage, treeImage;
 
@@ -33,29 +41,31 @@ var boats = [];
 function setup() {
     createCanvas(windowWidth, windowHeight);
     noStroke();
-    pattern();
 
-/*    var button = createButton("Generate Pattern");
-    button.position(50, 250);
-    button.mousePressed(pattern);
+
 
     var saveButton = createButton("Save Image");
-    saveButton.position(150, 250);
+    saveButton.position(50, 200);
     saveButton.mousePressed(saveImage);
 
-    var label = createElement("label", "update circles:");
-    label.position(50, 225);
 
-    slider = createSlider(5, 200, numCircles);
-    slider.position(50, 300);
-    slider.input(updateCircleNumber);
+    var grassLabel = createElement("label", "Grass Y");
+    grassLabel.position(50, 270);
 
-    var label = createElement("label", "update circle color:");
-    label.position(250, 270);
+    grassSlider = createSlider(135,255, grassY);
+    grassSlider.position(50, 300);
+    grassSlider.input(updateGrass);
 
-    colorSlider = createSlider(5, 255, changeColor);
-    colorSlider.position(250, 300);
-    colorSlider.input(changeCircleColor);*/
+
+
+    var boatSpeedLabel = createElement("label", "Change Boat Speed:");
+    boatSpeedLabel.position(250, 270);
+
+    boatSpeedSlider = createSlider(5, 255, changeSpeed);
+    boatSpeedSlider.position(250, 300);
+    boatSpeedSlider.input(updateBoatSpeed);
+
+
 
     var hueLabel = createElement("label", "Change BG color");
     hueLabel.position(450, 270);
@@ -63,8 +73,8 @@ function setup() {
     hueSlider = createSlider(5, 255, backColor);
     hueSlider.position(450, 300);
     hueSlider.input(updateHue);
-    
-     // add cloud positions
+
+    // add cloud positions
     let x = -100;
     for (let i = 0; i < numClouds; i++) {
         let y = random(height / 3);
@@ -97,7 +107,23 @@ function setup() {
 }
 
 
+function updateGrass() {
+	grassY = grassSlider.value();
 
+	for (let i = 0; i < numTrees; i++) {
+		trees[i].y = random(height/3, grassY);
+	}
+}
+
+
+function updateBoatSpeed() {
+    boatMinSpeed = boatSpeedSlider.value();
+    boatMaxSpeed = boatMinSpeed * 2;
+
+    for (let i = 0; i < numBoat; i++) {
+        boat[i].xSpeed = random(boatMinSpeed, boatMaxSpeed);
+    }
+}
 
 
 function updateHue() {
@@ -107,7 +133,6 @@ function updateHue() {
 
 
 
-/*
 function changeCircleColor() {
 
     r = this.value();
@@ -131,17 +156,16 @@ function saveImage() {
 }
 
 
-*/
 
 
 
-function pattern() {
+function draw() {
     colorMode(HSB, 360, 100, 100);
     background(backColor, 87, 100);
-    // beach color
+    // grass color
     noStroke();
     fill('green');
-    rect(0, height / 2, width, height / 2);
+    rect(0, grassY, width, height / 2);
 
     // ocean 
     fill('darkblue');
@@ -150,6 +174,7 @@ function pattern() {
     // trees
     for (let i = 0; i < numTrees; i++) {
         trees[i].draw();
+
     }
 
     // boats
