@@ -1,11 +1,14 @@
 var numCircles = 10;
 var slider;
 var colorSlider;
-var changeColor = r, g, b;
+var changeColor = r,g,b;
 
 var r = 0;
 var g = 55;
 var b = 215;
+
+var backColor = r,g,b;
+var hueSlider;
 
 
 
@@ -38,8 +41,28 @@ function setup() {
     colorSlider.position(250, 300);
     colorSlider.input(changeCircleColor);
 
+    var hueLabel = createElement("label", "Change BG color");
+    hueLabel.position(450, 270);
+
+    hueSlider = createSlider(5, 255, backColor);
+    hueSlider.position(450, 300);
+    hueSlider.input(updateHue);
+
+    
+    
+function draw(){
+    colorMode(HSB, 53, 87, 100);
+    background(backColor);
+}
 
 }
+
+
+function updateHue() {
+    backColor = hueSlider.value();
+   
+}
+
 
 
 function changeCircleColor() {
@@ -69,7 +92,7 @@ function saveImage() {
 
 
 function pattern() {
-    background("yellow");
+    background("backHue");
 
     for (let i = 0; i < numCircles; i++) {
         let x = i * width / numCircles + random(50);
