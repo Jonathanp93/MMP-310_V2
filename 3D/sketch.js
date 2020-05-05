@@ -6,7 +6,9 @@ var rotX, rotY, rotZ;
 
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
-
+    img = loadImage("iceCreamConeTexture.jpg");
+    
+    
     createP("Scene controls").position(10, 0);
 
     rotX = createSlider(-TWO_PI, TWO_PI, 0, TWO_PI / 360);
@@ -46,26 +48,26 @@ function draw() {
     rotateZ(rotZ.value());
 
     push();
-    fill("tan");
+    texture(img);
     cone(70, 140);
     pop();
 
     push();
     translate(0, -100, 0);
-    fill(153, 76, 0);
+    ambientMaterial(153, 76, 0);
     sphere(70);
     pop();
 
 
     push();
     translate(50, -190, 0);
-    fill("pink");
+    normalMaterial();
     torus(20, 15);
     pop();
 
     push();
     translate(-50, -190, 0);
-    fill("pink");
+    normalMaterial();
     torus(20, 15);
     pop();
     
