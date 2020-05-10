@@ -1,7 +1,7 @@
 class Particle {
 	constructor(position) {
 		this.position = position.copy();
-		this.lifespan = 600;
+		this.lifespan = 300;
 		this.speed = createVector(random(-2, 2), 2, random(-2, 2));
 		this.acceleration = createVector(0.01, 0.1, 0);
 		this.rotation = createVector(0, 0.5, 0.1);
@@ -31,7 +31,7 @@ class Particle {
         if (this.position.z < 300 / 2){
 			this.speed.z *= -1;
 			this.acceleration.x *= 1;
-            random(powerups).play();
+            /*random(powerups).play();*/
 			
             }
         

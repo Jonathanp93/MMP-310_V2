@@ -5,11 +5,11 @@
 
 var music;
 var powerups = [];
-var explosion;
+var explosion ;
 
 function preload() {
     music = loadSound("Dexter_Britain_-_11_-_Wonderland_Instrumental.mp3")
-    powerups.push(loudSound("Powerup8.wav"));
+    powerups.push(loadSound("Powerup8.wav"));
     powerups.push(loadSound("Powerup29.wav"));
     
     explosion.push(loadSound("Explosion16.wav"));
@@ -27,7 +27,8 @@ function keyPressed() {
         }
 
     }
-
+    
+    //limit 4 before crash because of sound effects
     if (keyCode == 13) {
         particleSystem.add();
 
