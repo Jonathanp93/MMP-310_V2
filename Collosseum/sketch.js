@@ -13,16 +13,13 @@ preload() {
     this.attack = loadSpriteSheet('images/collosseum/attack.png', 533, 510, 2);
     /*this.map = new Map();*/
 
-    /*this.characterKnight.idle2 = loadSpriteSheet('images/collosseum/knight_idle', 416, 448, 3);
-    this.characterKnight.walk = loadSpriteSheet('images/collosseum/knight_walk', 416, 432, 3);
-    this.characterKnight.attack = loadSpriteSheet('images/collosseum/knight_attack', 414, 477, 2);
-    this.map = new Map();*/
+   
     //	this.map.preload('data/jonathan.json');
 
     //	this.bg = loadSound('sounds/nelson/retromusic4.m4a');
 
 
-    //	this.walkSound = loadSound('sounds/nelson/walking.wav');
+    //	this.walkSound = loadSound();
 
 
     //	this.walkSound.playMode();
