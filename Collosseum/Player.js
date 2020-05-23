@@ -1,5 +1,5 @@
 class Player {
-    constructor(x, y) {
+    constructor(x, y, idleImage, attackImage) {
         this.x = x;
         this.y = y;
         this.w = 10; // width
@@ -70,11 +70,11 @@ class Player {
         // use global images here
         if (this.isPerformingAction) {
             // attacking image
-            fill('red');
-            image(attackImage, 0, 0);
+            
+            image(attackImage, this.x, this.y);
         } else {
             // regular image
-            image(idleImage, 0, 0);
+            image(idleImage, this.x, this.y);
         }
         // add other keys like up down left right to change images for movement
     }
