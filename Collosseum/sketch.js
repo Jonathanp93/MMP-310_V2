@@ -11,18 +11,18 @@ var actionHappened = false;
 
 
 function preload() {
-    p1IdleImage = loadImage("gladiator_idle.gif");
-    p2IdleImage = loadImage("gladiator_idle_p2.gif");
+    p1IdleImage = loadImage("gladiator_idle.png");
+    p2IdleImage = loadImage("gladiator_idle_p2.png");
 
-    p1attackImage = loadImage("axe_attack.gif");
-    p2attackImage = loadImage("sword_attack_p2.gif");
+    p1attackImage = loadImage("axe_attack.png");
+    p2attackImage = loadImage("sword_attack_p2.png");
 }
 
 
 // add graphics vars, sound vars and preload here
 
 function setup() {
-    createCanvas(700, 700);
+    createCanvas(windowWidth, 700);
     noStroke();
     // initialize players and set controls
     player1 = new Player(200, 200, p1IdleImage, p1attackImage);
