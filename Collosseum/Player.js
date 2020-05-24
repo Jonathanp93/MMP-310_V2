@@ -14,13 +14,9 @@ class Player {
 
         this.isPerformingAction = false; // if player is "attacking"
 
-        this.p1IdleImage = p1IdleImage;
-        this.p1attackImage = p1attackImage;
+        this.idleImage = idleImage;
+        this.attackImage = attackImage;
 
-        this.p2IdleImage = p2IdleImage;
-        this.p2attackImage = p2attackImage;
-
-       
 
 
     }
@@ -70,7 +66,7 @@ class Player {
         // use global images here
         if (this.isPerformingAction) {
             // attacking image
-            
+
             image(this.attackImage, this.x, this.y);
         } else {
             // regular image

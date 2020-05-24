@@ -9,15 +9,15 @@ var p2IdleImage, p2attackImage;
 // global to prevent spamming actions
 var actionHappened = false;
 
-function preload() {
-    function preload() {
-        p1IdleImage = loadImage("idle.gif");
-        p2IdleImage = loadImage("galidator_idle_p2.gif");
 
-        p1attackImage = loadImage("axe_attack.gif");
-        p2attackImage = loadImage("sword_attack_p2.gif");
-    }
+function preload() {
+    p1IdleImage = loadImage("gladiator_idle.gif");
+    p2IdleImage = loadImage("gladiator_idle_p2.gif");
+
+    p1attackImage = loadImage("axe_attack.gif");
+    p2attackImage = loadImage("sword_attack_p2.gif");
 }
+
 
 // add graphics vars, sound vars and preload here
 
@@ -80,8 +80,9 @@ function draw() {
 
 
 
-    player1.draw("idle.gif");
-    player2.draw("gladiator_idle_p2.gif");
+    player1.draw();
+    player2.draw();
+
 
 
     // draw health of each player
