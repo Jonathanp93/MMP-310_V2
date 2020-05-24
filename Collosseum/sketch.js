@@ -14,8 +14,8 @@ function preload() {
     p1IdleImage = loadImage("gladiator_idle.png");
     p2IdleImage = loadImage("gladiator_idle_p2.png");
 
-    p1attackImage = loadImage("axe_attack.png");
-    p2attackImage = loadImage("sword_attack_p2.png");
+    p1attackImage = loadImage("axe_attack.gif");
+    p2attackImage = loadImage("sword_attack_p2.gif");
 }
 
 
