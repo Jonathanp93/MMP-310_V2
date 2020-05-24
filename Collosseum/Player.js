@@ -14,10 +14,10 @@ class Player {
 
         this.isPerformingAction = false; // if player is "attacking"
 
-        this.idleImage = idleImage;
-        this.attackImage = attackImage;
+        this.p1IdleImage = p1IdleImage;
+        this.p1attackImage = p1attackImage;
 
-        this.p2idleImage = p2idleImage;
+        this.p2IdleImage = p2IdleImage;
         this.p2attackImage = p2attackImage;
 
        
@@ -71,10 +71,10 @@ class Player {
         if (this.isPerformingAction) {
             // attacking image
             
-            image(attackImage, this.x, this.y);
+            image(this.attackImage, this.x, this.y);
         } else {
             // regular image
-            image(idleImage, this.x, this.y);
+            image(this.idleImage, this.x, this.y);
         }
         // add other keys like up down left right to change images for movement
     }

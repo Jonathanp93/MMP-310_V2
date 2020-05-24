@@ -22,10 +22,10 @@ function preload() {
 // add graphics vars, sound vars and preload here
 
 function setup() {
-    createCanvas(600, 400);
+    createCanvas(700, 700);
     noStroke();
     // initialize players and set controls
-    player1 = new Player(200, 200, p1IdleImage, P1attackImage);
+    player1 = new Player(200, 200, p1IdleImage, p1attackImage);
     // enter control keys up down left right action
     // http://keycode.info/
     player1.controls(87, 83, 65, 68, 69);
